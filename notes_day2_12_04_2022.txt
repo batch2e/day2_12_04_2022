@@ -413,4 +413,33 @@ public static void main(String args[]) {
 }
 
 }
+-----------------------------------------------------------------------------------------------------------
+Exercise1 : Depending on the item price calculate the price of the item after giving a discount.
+
+   if price is >=10000 discount will be 10 %
+   if price is >=1000  discount will be 5%
+   otherwise not discount in the price.
+
+  class Exercise1 {
+    public static void main(String[] args) {
+    // write the code
+   }
+ 
+  }
+
+
+Exercise2 : Depending upon marks , assign a grade for the student.
+
+  if marks>=80   grade will be A
+  if marks>=60   grade will be B
+  otherwise grade is C.
+ 
+
+  class Exercise2 {
+    public static void main(String[] args) {
+   // write the code
+   }
+ 
+  }
+
 
