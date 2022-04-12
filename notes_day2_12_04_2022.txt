@@ -587,7 +587,7 @@ class Expression2 {
  }
 ----------------------------------------------------------------------------------------------------------
 float f=(float)12.23;
--------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
 Programming Constructs:
 
 if (<condition>) {  // Curly braces are not required if there is only one statement inside the block
@@ -686,7 +686,7 @@ public class Customer {
 		System.out.println("Total cost: " + totalCost);
 	}
 }
-----------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
 if (<condition>) { 
     <statements>; 
 } 
@@ -727,7 +727,7 @@ else if (<condition 3>) {
 else {
     <statements>;
 } 
------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
 public class Customer2 {
 	public static void main(String[] args) {
 		String customerType = "Regular";
@@ -753,8 +753,18 @@ So within if else if else ladder, we can have
 single if
 multiple else if
 single else
+OR
+single if
+single else if
+single else
+OR
+single if
+single else if
+OR
+single if
+single else
 
-----------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------
 
 if (<condition 1>) {
     if (<condition 2>) {
@@ -779,9 +789,11 @@ public class Customer3 {
 			totalCost = totalCost - (totalCost * discount / 100);
 			System.out.println("You are a regular customer and have got 5% discount");
 			System.out.println("The total cost to be paid is " + totalCost);
-			if (totalCost >= 20) {
+			if (totalCost >= 20){
 				System.out.println("You have got a gift voucher!!!!");
-			}
+			}else{
+                                System.out.println("You are not eligible for the voucher");
+                             }
 		} else if (customerType == "Guest") {
 			totalCost = totalCost + deliveryCharge;
 			System.out.println("You need to pay an additional delivery charge of $5");
@@ -790,4 +802,140 @@ public class Customer3 {
 			System.out.println("Invalid selection");
 		}
 	}
+}
+---------------------------------------------------------------------------------------------------------------public class ItemPrice {
+public static void main(String args[]) {
+    String customerType="regular";
+    int quantity=5;
+    int price=45;
+    int discount=5;
+    int totalCost=0;
+     totalCost = quantity*price;
+    if (customerType == "regular") {
+        totalCost=totalCost-totalCost*(5/100);
+        System.out.println(" congrats! you are a regular customer and you are eligible for 5% discount");
+    }
+    System.out.println(" total cost is "+totalCost);
+}
+}
+---------------------------------------------------------------------------
+
+public class ItemPrice {
+public static void main(String args[]) {
+    String customerType="regular";
+    int quantity=5;
+    int price=45;
+    int discount=5;
+    float totalCost=0;
+     totalCost = quantity*price;
+    if (customerType == "regular") {
+        totalCost=totalCost-totalCost*(float)discount/100;
+        System.out.println(" congrats! you are a regular customer and you are eligible for 5% discount");
+    }
+    System.out.println(" total cost is "+totalCost);
+}
+}
+---------------------------------------------------------------------------------------------------------- 
+switch (expression or variable) {
+   case value1: <statements>;
+                break;
+   case value2: <statements>;
+                break;
+   default: <statements>;
+}
+
+
+class SwitchDemo1 {
+
+   public static void main(String args[]){
+     int ch=2;
+     switch(ch){
+       case 1 : System.out.println("Sunday");
+                break;
+       case 2 : System.out.println("Monday");
+                break;
+       case 3  : System.out.println("Tuesday");
+                 break;
+       default : System.out.println("Your option is wrong");
+     }
+  }
+}
+
+
+class SwitchDemo2 {
+
+   public static void main(String args[]){
+     int ch=2;
+     switch(ch){
+       case 1 : System.out.println("Sunday");
+                break;
+       case 2 : System.out.println("Monday");
+                //break;
+       case 3  : System.out.println("Tuesday");
+                 //break;
+       default : System.out.println("Your option is wrong");
+     }
+  }
+}
+
+// default can be place anywhere in the begining or in between of the switch block
+
+class SwitchDemo3 {
+
+   public static void main(String args[]){
+     int ch=2;
+     switch(ch){
+      default : System.out.println("Your option is wrong");
+                 break;
+       case 1 : System.out.println("Sunday");
+                break;
+       case 2 : System.out.println("Monday");
+                break;
+       case 3  : System.out.println("Tuesday");
+             
+      
+     }
+  }
+}
+Q What datatypes are allowed with the switch expression.
+A char,byte,short,int,String
+
+We cannot have as long,float,double or boolean
+class SwitchDemo4 {
+
+   public static void main(String args[]){
+     long ch=2;
+     switch(ch){
+      default : System.out.println("Your option is wrong");
+                 break;
+       case 1 : System.out.println("Sunday");
+                break;
+       case 2 : System.out.println("Monday");
+                break;
+       case 3  : System.out.println("Tuesday");
+             
+      
+     }
+  }
+}
+// Cannot switch on a value of type long. Only convertible int values, strings or enum variables are permitted
+
+
+class SwitchDemo5 {
+
+   public static void main(String args[]){
+     String weekDays="Monday";
+     switch(weekDays){
+      
+       case "Sunday" : System.out.println("Sunday");
+                       break;
+       case "Monday" : System.out.println("Monday");
+                       break;
+       case "Tuesday"  : System.out.println("Tuesday");
+                         break;     
+      
+       default : System.out.println("Your option is wrong");
+                 
+     }
+  }
 }
