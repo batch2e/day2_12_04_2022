@@ -170,7 +170,7 @@ class Data4 {
 
 }
 
--------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------
 
 
 class Demo {
@@ -182,8 +182,235 @@ class Demo {
 }
 
 
+public class Data5 {
+
+	public static void main(String[] args) {
+		/* char ch=65;
+		char ch2=66;
+		char ch3=67; */
+		char ch=65,ch2=66,ch3=67;
+		System.out.println(ch+" "+((int)ch));
+		System.out.println(ch2+" "+((int)ch2));
+		System.out.println(ch3+" "+((int)ch3));
+	}
+
+}
+
+
+public class Data6 {
+public static void main(String[] args) {
+       float f=12.35535365325546664567777344f; // 6 places of decimal
+       System.out.println(f);
+       double d=12.35535365325546664567777344; // 15 places od decimal
+       System.out.println(d);
+	}
+
+}
+--------------------------------------------------------------------------------------------------
+ Non-primitive data types include classes, arrays, interfaces etc.
+
+public class Data7 {
+
+	public static void main(String[] args) {
+		String str="Welcome";
+		System.out.println(str);
+		int num=10;
+		System.out.println(num);
+
+	}
+
+}
+----------------------------------------------------------------
+We have an item , if the item price is more than 1000 we give a discount of 5%.
+= is assignment operator
+LHS=RHS
+// RHS is assigned to LHS variable
+class Item {
+    public static void main(String arrgs[]){
+     String itemName="Shirt";
+     int itemPrice=1500;
+     int discount=5;
+     if(itemPrice>1000){
+       itemPrice=itemPrice-(itemPrice*5/100);
+     } // end of if
+     System.out.println("The item price is "+itemPrice);
+
+   } // end of main
+ } // end of class
+
+
+public class Calculator {
+
+	public static void main(String[] args) {
+		int num1=10;
+		int num2=20;
+		int result=num1+num2;
+		System.out.println(result);
+		result=num1-num2;
+		System.out.println(result);
+		result=num1*num2;
+		System.out.println(result);
+		result=num2/num1;  //quotient
+		System.out.println(result);
+		result=num2%num1;  //remainder
+		System.out.println(result);
+		
+	}
+
+}
 
 
 
- 
+-----------------------------------------------------------
+operators and operands ===> operators are applied on operands
+
+   num1+num2;
+   + is an operator
+   num1 and num2 as operands
+
+// post increment
+ class OperatorUnaryDemo1{
+      public static void main(String[] args) {
+       int num=10;
+       num++;// num=num+1;
+       System.out.println(num); //11
+      }
+   }
+
+
+// pre increment
+ class OperatorUnaryDemo2{
+      public static void main(String[] args) {
+       int num=10;
+       ++num; // num=num+1;
+       System.out.println(num); //11
+      }
+   }
+
+
+
+// post increment
+ class OperatorUnaryDemo3{
+      public static void main(String[] args) {
+       int num=10;
+       int result=num++;
+       // result=num;
+      // num=num+1;
+        System.out.println(result); //10
+        System.out.println(num); //11
+      }
+   }
+
+
+// pre increment
+ class OperatorUnaryDemo4{
+      public static void main(String[] args) {
+       int num=10;
+       int result=++num;
+       // num=num+1;
+       // result=num;
+       System.out.println(result);  //11
+       System.out.println(num); //11
+      }
+   }
+
+
+// logical negation
+ class OperatorUnaryDemo5{
+      public static void main(String[] args) {
+       boolean b1=true;
+       boolean b2=false;
+       System.out.println(b1);  //true
+       System.out.println(b2); //false
+       System.out.println(!b1);  //false
+       System.out.println(!b2); //true
+      }
+   }
+
+ class OperatorUnaryDemo6{
+public static void main(String args[]) {
+	int numOne = 10;
+	int numTwo = 5;
+	boolean isTrue = true;
+	System.out.println(numOne++ + " " + ++numOne); //Output will be 10 12
+	System.out.println(numTwo-- + " " + --numTwo); //Output will be 5 3
+	System.out.println(!isTrue + " " + ~numOne); //Output will be false -13
+}
+
+}
+
+class RelationalDemo1 {
+public static void main(String args[]) {
+	int num1=10;
+        int num2=20;     
+        int num3=5;
+        int num4=10;
+        System.out.println(num1==num2);  // false
+        System.out.println(num1==num4);   // true       
+        System.out.println(num1>num3);    // true 
+        System.out.println(num1<num3);    // false
+        System.out.println(num1>=num4);   // true
+        System.out.println(num1>=num3);   //true
+        System.out.println(num1!=num3);    //true
+        System.out.println(num1!=num4);    // false
+     }
+
+
+
+
+
+}
+
+
+class LogicalDemo1 {
+public static void main(String args[]) {
+	int num1=10;
+        int num2=20;     
+        int num3=5;
+        int num4=10;
+        System.out.println(num1==num2 && num1==num4);   //false && true ===> false
+        System.out.println(num1==num4 && num1>num3);   // true  && true ====> true       
+        System.out.println(num1>num3 || num1==num2);    // true || false====> true 
+       
+     }
+
+}
+
+class TernaryOperator1 {
+
+public static void main(String args[]) {
+	int numOne = 10;
+	int numTwo = 5;
+	int min = (numOne < numTwo) ? numOne : numTwo;
+	System.out.println(min); //Output will be 5
+}
+
+}
+
+
+
+class TernaryOperator2 {
+
+public static void main(String args[]) {
+	int numOne = 5;
+	int numTwo = 10;
+	int min = (numOne < numTwo) ? numOne : numTwo;
+	System.out.println(min); //Output will be 5
+}
+
+}
+
+
+if marks is more than or equal to 80 ===> Good score
+otherwise Bad score
+
+class TernaryOperator3 {
+public static void main(String args[]) {
+	int marks = 80;
+	String remarks=(marks>=80)? "Good score": "Bad score";
+	System.out.println((marks>=80)? "Good score": "Bad score");
+	System.out.println(remarks); 
+}
+
+}
 
