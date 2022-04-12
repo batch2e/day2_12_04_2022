@@ -574,9 +574,11 @@ class Expression1 {
      result1=num1/num2;
      System.out.println(result1); //2 
      result2=num1/num2;
+     System.out.println(result2); //2.0
+     result2=(double)num1/num2;
      System.out.println(result2);  //2.5
-     
-
+     result2=(float)num1/num2;
+     System.out.println(result2);  //2.5
     }
 
 
