@@ -1,0 +1,189 @@
+How to create a java project?
+File===>New=====>Java Project
+
+How to create a java class within the project?
+*Right click on the project=====>New====>class
+*In the dialog box for creating new Java class dont mention any package name ( We will discuss about the 
+ packages later during our session) by default the package name is same as that of the project name.
+ Delete the text which is shown for the package name.
+* Mention the class name.Please follow the convention of naming a class.
+* select the checkbox to have main method in the class created.
+* In the code editor, just write syso and press ctrl+spacebar.
+* Right click on the code editor, Run as ====>Java application.
+* To save the file content press ctrl+s.
+
+String[] args / String args[] both are correct.
+
+class hello{
+   public static void main(String args[]){
+   System.out.print("Hello");
+   }
+  }
+
+The code compiles and shows the output as Hello.
+But we should follow the convention of class naming.So here we mentioned hello where H should be in uppercase.
+
+class Hello{
+   public static void main(string args[]){
+   System.out.print("Hello");
+   }
+  }
+The code will not compile because we are writing the String class as string.    
+
+class Hello{
+   public static void main(String str[]){
+   System.out.print("Hello");
+   }
+  }
+The code compiles and shows the output as Hello.
+
+class Hello{
+   public static void main(String str[]){
+   System.out.print("Hello")
+   }
+  }
+The code will not compile because we missed statement ending with ;.
+
+class Data {
+   public static void main(String args[]){
+      int num=10;
+    }
+ }
+
+8 bits=1 byte 
+
+The following are 8 primitive datatypes:
+* char which can store a character
+  char alpha='A';
+  char alpha='$';
+  char alpha='1';
+  For character storage we have 2 bytes of memory
+* byte 1 byte   
+* short 2 bytes 
+* int   4 bytes
+* long  8 bytes
+* float 4 bytes
+* double 8 bytes
+* boolean => true/false 1 bit
+---------------------------------------------------------------------------------------------------
+// A single line comment
+/* This is a demo 
+   of multiple lines comment */
+
+long l=100000;
+// In the above line int value 100000 is assigned to a long variable l which is possible because int is 
+// having a size of 4 bytes which can be stored in 8 bytes of memory which for long datatype.
+
+Long var=100000L;
+// We are assigning a long value to a long variable.
+
+
+float var=12.34;
+// The above line shows compilation error because 12.34 is a double value which is assigned to a float variable
+// The size of float variable is of 4 bytes which is lesser than double which is of 8 bytes.
+
+float var=12.34f;
+float var2=12.34F;
+// In the above 2 lines as the value is with the suffix f or F. Which depicts that the value in RHS is of
+  float type which is assigned to a float variable.
+
+
+float var3=20;
+// The above line will compile without an error becuase both float and int are having the same size of 4bytes.
+ // So 20 is an int value which is stored or assigned in a variable of float type.
+
+
+double d=12.34;
+// The above line is fine as 12.34 is a double value which is assigned to a double variable.
+
+double d=10;
+// The above line is fine as we are assigning an int value to a double variable. int is having a size of
+// 4 bytes which can be assigned to a double variable which is having a size of 8 bytes.
+
+
+char ch=65;
+// The above line will compile without any error as int can be assigned to a char datatype.
+
+---------------------------------------------------------------------------------------------------------------
+
+//This is my demo of primitive data type
+public class Data1 {
+
+	public static void main(String[] args) {
+		char alpha='a';
+		int num=10;
+		//float f=10.25; here we are assigning a double value to a float variable. 10.25 is a double value which is assigned to a float variable f 
+		double d=10.25; // here we dont have any compilation error because the 10.25 which is double value is assigned to a double variable
+        float var=10.25f;
+          var=10.25F;
+         // In line 11 we have declared and initialise a float variable var with a float value as the value 10.25 is with the suffix f
+        // In line 12 the suffix is F
+         boolean b=true;
+         System.out.println(alpha);
+         System.out.println(num);
+         System.out.println(d);
+         System.out.println(var);
+         System.out.println(b);
+         alpha=65;
+         System.out.println(alpha);
+         alpha=97;
+         System.out.println(alpha);
+         
+	}
+
+}
+---------------------------------------------------------------------------------------------------------------
+The variable needs to be initialised before the access. Otherwise it will be a compilation error.
+
+class Data2 {
+
+	public static void main(String[] args) {
+		int num;
+		System.out.println(num);
+
+	}
+
+}
+
+//The local variable num may not have been initialized
+// The above code is with error because we have not initialised num are we are trying to display the
+// value of num.
+
+class Data3 {
+
+	public static void main(String[] args) {
+		int num=10;
+		System.out.println(num);
+
+	}
+
+}
+
+class Data4 {
+
+	public static void main(String[] args) {
+		int num;
+                num=10;
+		System.out.println(num);
+
+	}
+
+}
+
+-------------------------------------------------------------------------------------------------------
+
+
+class Demo {
+	public static void main(String[] args) {
+		int quantity;
+		float totalCost = 10 * quantity; // error on this line
+		System.out.println(totalCost);
+	}
+}
+
+
+
+
+
+ 
+
