@@ -564,7 +564,7 @@ class Expression1 {
 }
 
 
- class Expression2 {
+class Expression2 {
 
     public static void main(String args[]){
      int num1=5;
@@ -579,7 +579,215 @@ class Expression1 {
      System.out.println(result2);  //2.5
      result2=(float)num1/num2;
      System.out.println(result2);  //2.5
+     result2=(float)(num1/num2);
+     System.out.println(result2);  //2.0
     }
 
 
  }
+----------------------------------------------------------------------------------------------------------
+float f=(float)12.23;
+-------------------------------------------------------------------------------------------
+Programming Constructs:
+
+if (<condition>) {  // Curly braces are not required if there is only one statement inside the block
+    <statements>;
+}
+
+if(boolean) {
+
+}
+
+
+class ConditionCheckDemo1 {
+
+      public static void main(String args[])
+     {
+     int num=10;
+     if(num=10) {    // if(int){} expression datatype cannot be int  
+        System.out.println("The value is 10");
+     }
+  }
+}
+
+// Type mismatch: cannot convert from int to boolean
+
+
+class ConditionCheckDemo2 {
+
+      public static void main(String args[])
+     {
+     int num=10;
+     if(num==10) {    // if(boolean){} expression datatype cannot be int  if(true){}
+        System.out.println("The value is 10");
+     }
+  }
+}
+
+class ConditionCheckDemo3 {
+
+      public static void main(String args[])
+     {
+     int num1=10;
+     int num2=20;
+     if(num1+num2) {    // if(int){} expression datatype cannot be int  if(int){}
+        System.out.println("The value is 10");
+     }
+  }
+}
+// The above code will show compiltion error
+
+
+class ConditionCheckDemo4{
+
+      public static void main(String args[])
+     {
+     int num1=10;
+     int num2=20;
+     if(num1==num2) {    // if(boolean){} expression datatype cannot be int  if(boolean){}
+        System.out.println("num1 and num2 are equal");
+     }
+  }
+}
+
+
+
+class ConditionCheckDemo5{
+
+      public static void main(String args[])
+     {
+     int num1=10;
+     int num2=20;
+     if(num1==num2) {    // if(boolean){} expression datatype cannot be int  if(boolean){}
+        System.out.println("num1 and num2 are equal");
+     } 
+     else{
+         System.out.println("num1 and num2 are not equal");
+         }
+  }
+}
+
+
+
+public class Customer {
+	public static void main(String[] args) {
+		String customerType = "Regular";
+		int quantity = 2;
+		int unitPrice = 10;
+		int totalCost = 0;
+		int discount = 5;
+		totalCost = unitPrice * quantity;
+		if (customerType == "Regular") {
+			totalCost = totalCost - (totalCost * discount / 100);
+			System.out.println("You are a regular customer and eligible for 5% discount");
+			
+		}
+		System.out.println(customerType);
+		System.out.println("Total cost: " + totalCost);
+	}
+}
+----------------------------------------------------------------------
+if (<condition>) { 
+    <statements>; 
+} 
+else { 
+    <statements>; 
+} 
+
+public class Customer1 {
+	public static void main(String[] args) {
+		String customerType = "Regular";
+		int quantity = 2;
+		int unitPrice = 10;
+		int totalCost = 0;
+		int discount = 5;
+		int deliveryCharge = 5;
+		totalCost = unitPrice * quantity;
+		if (customerType == "Regular") {
+			totalCost = totalCost - (totalCost * discount / 100);
+			System.out.println("You are a regular customer and eligible for 5% discount");
+		} else {
+			totalCost = totalCost + deliveryCharge;
+			System.out.println("You need to pay an additional delivery charge of $5");
+		}
+		System.out.println("Total cost: " + totalCost);
+	}
+}
+----------------------------------------------------------------------------------------------------------
+
+if (<condition 1>) {
+    <statements>;
+}
+else if (<condition 2>) {
+    <statements>;
+}
+else if (<condition 3>) {
+    <statements>;
+}
+else {
+    <statements>;
+} 
+-----------------------------------------------------------
+public class Customer2 {
+	public static void main(String[] args) {
+		String customerType = "Regular";
+		int quantity = 3;
+		int unitPrice = 10;
+		int discount = 5;
+		int deliveryCharge = 5;
+		int totalCost = unitPrice * quantity;
+		if (customerType == "Regular") {
+			totalCost = totalCost - (totalCost * discount / 100);
+			System.out.println("You are a regular customer and eligible for 5% discount");
+			System.out.println("The total cost to be paid is " + totalCost);
+		} else if (customerType == "Guest") {
+			totalCost = totalCost + deliveryCharge;
+			System.out.println("You need to pay an additional delivery charge of $5");
+			System.out.println("The total cost to be paid is" + totalCost);
+		} else // If there is only one statement inside a block, {} is optional
+			System.out.println("Invalid customer type");
+	}
+}
+
+So within if else if else ladder, we can have
+single if
+multiple else if
+single else
+
+----------------------------------------------------------------------------------------------
+
+if (<condition 1>) {
+    if (<condition 2>) {
+        <statements>;
+    }
+    else {
+        <statements>;
+    }
+}
+
+
+public class Customer3 {
+	public static void main(String[] args) {
+		String customerType = "Guest";
+		int quantity = 2;
+		int unitPrice = 10;
+		int totalCost = 0;
+		int discount = 5;
+		int deliveryCharge = 5;
+		totalCost = (unitPrice * quantity);
+		if (customerType == "Regular") {
+			totalCost = totalCost - (totalCost * discount / 100);
+			System.out.println("You are a regular customer and have got 5% discount");
+			System.out.println("The total cost to be paid is " + totalCost);
+			if (totalCost >= 20) {
+				System.out.println("You have got a gift voucher!!!!");
+			}
+		} else if (customerType == "Guest") {
+			totalCost = totalCost + deliveryCharge;
+			System.out.println("You need to pay an additional delivery charge of $5");
+			System.out.println("The total cost to be paid is " + totalCost);
+		} else {
+			System.out.println("Invalid selection");
+		}
+	}
+}
