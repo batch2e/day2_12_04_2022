@@ -427,6 +427,7 @@ Exercise1 : Depending on the item price calculate the price of the item after gi
  
   }
 
+[Hint: (condition)?true:(conditon)?true:false ]
 
 Exercise2 : Depending upon marks , assign a grade for the student.
 
@@ -442,4 +443,141 @@ Exercise2 : Depending upon marks , assign a grade for the student.
  
   }
 
+---------------------------------------------------------------------------------------------------------------
+Assignment operator
 
+  class AssignmentOperator1 {
+
+   public static void main(String[] args) {
+      int num;
+      num=10;  // We are assigning a value of 10 to the variable num
+      int num2;
+      num2=num; // Whatever num is having that is copied to num2
+      System.out.println(num);
+      System.out.println(num2);
+   }
+
+   }
+--------------------------------------------------------------------------------------
+Declare a variable num and add 5 to that variable's value
+
+ class AssignmentOperator2 {
+
+   public static void main(String[] args) {
+      int num;
+      num=10;  
+      System.out.println(num);
+      //num=num+5;
+        num+=5;  // if the value changed is assigned to the same variable after performing arithmetic operation
+      System.out.println(num);
+   }
+
+   }
+-----------------------------------------------------------------------------------------------------------
+class PrecedenceDemo1{
+    public static void main(String args[]){
+    int result=10+2-5;
+    System.out.println(result); //7
+   }
+
+
+}
+
+class PrecedenceDemo2{
+    public static void main(String args[]){
+    int result=10-2+5;
+    System.out.println(result); //13
+   }
+
+
+}
+
+
+class PrecedenceDemo3{
+    public static void main(String args[]){
+    int result=10-2+5*4;   //  1) 10-2+20;   2) 8+20  3) 28
+    System.out.println(result); //28
+   }
+
+
+}
+
+
+class PrecedenceDemo4{
+    public static void main(String args[]){
+    int result=10-(2+5)*4;   //  1) 10-7*4     2) 10-28
+    System.out.println(result); //
+   }
+
+
+}
+
+
+class ConversionDemo1{
+ public static void main(String args[]){
+    int num=10;
+    double num2=num; // The num which is of int type and size of 4 bytes can be assigned to a type double which is having 8 bytes
+    
+   }
+}
+
+class CastingDemo1{
+ public static void main(String args[]){
+   double num=10.45;
+    int num2=num; // We get a compilation error because we are trying to assign the value of a variable which having the higher
+    // datatype size as compared to the variable where the value is assigned
+   }
+}
+
+// Type mismatch: cannot convert from double to int
+
+
+
+class CastingDemo2{
+ public static void main(String args[]){
+   double num=10.45;
+    int num2=(int)num; // The code will compile and show us the output as we forced the datatype to
+    // get converted from double to int
+   System.out.println(num2);
+   }
+}
+
+
+class Expression1 {
+
+ public static void main(String args[]){
+        int num1=10;
+        double num2=10.23;
+        double result=num2+num1; // num1 is of int type and size of 4 bytes and
+       // num2 is of double type and size of 8 bytes
+       // so here we have double of bigger sizw and int of smaller size so
+       // the int type is converted into double type implicitly.
+        System.out.println(result);// 20.23
+        byte b=1;
+        result=num1+num2+b;
+       // here both b and num1 gets converted to double type because the 
+       // size of double is more than byte and int
+       System.out.println(result);  // 21.23
+     }
+
+
+}
+
+
+ class Expression2 {
+
+    public static void main(String args[]){
+     int num1=5;
+     int num2=2;
+     int result1;
+     double result2;
+     result1=num1/num2;
+     System.out.println(result1); //2 
+     result2=num1/num2;
+     System.out.println(result2);  //2.5
+     
+
+    }
+
+
+ }
